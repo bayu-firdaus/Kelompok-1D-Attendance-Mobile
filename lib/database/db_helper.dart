@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:attendancewithfingerprint/model/attendance.dart';
-import 'package:attendancewithfingerprint/model/settings.dart';
+import '../model/attendance.dart';
+import '../model/settings.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 

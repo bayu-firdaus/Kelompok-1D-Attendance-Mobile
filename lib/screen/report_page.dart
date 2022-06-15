@@ -1,6 +1,6 @@
-import 'package:attendancewithfingerprint/database/db_helper.dart';
-import 'package:attendancewithfingerprint/model/attendance.dart';
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../database/db_helper.dart';
+import '../model/attendance.dart';
+import '../utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class ReportPage extends StatefulWidget {

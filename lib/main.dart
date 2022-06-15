@@ -1,5 +1,5 @@
-import 'package:attendancewithfingerprint/screen/scan_qr_page.dart';
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../screen/scan_qr_page.dart';
+import '../utils/strings.dart';
 import 'package:flutter/material.dart';
 
 void main() {

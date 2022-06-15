@@ -1,6 +1,6 @@
-import 'package:attendancewithfingerprint/database/db_helper.dart';
-import 'package:attendancewithfingerprint/screen/main_menu_page.dart';
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../database/db_helper.dart';
+import '../screen/main_menu_page.dart';
+import '../utils/strings.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';

@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:attendancewithfingerprint/database/db_helper.dart';
-import 'package:attendancewithfingerprint/model/settings.dart';
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../database/db_helper.dart';
+import '../model/settings.dart';
+import '../utils/strings.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

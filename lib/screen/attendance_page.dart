@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:attendancewithfingerprint/model/attendance.dart';
-import 'package:attendancewithfingerprint/screen/main_menu_page.dart';
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../model/attendance.dart';
+import '../screen/main_menu_page.dart';
+import '../utils/strings.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

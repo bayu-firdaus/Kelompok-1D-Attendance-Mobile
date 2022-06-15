@@ -1,4 +1,4 @@
-import 'package:attendancewithfingerprint/utils/strings.dart';
+import '../utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {

@@ -22,25 +22,25 @@ class SingleMenu extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                width: 40.0,
-                height: 40.0,
+                width: 50.0,
+                height: 50.0,
                 decoration: new BoxDecoration(
                   color: color,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   icon,
-                  size: 18.0,
+                  size: 20.0,
                   color: Colors.white,
                 ),
               ),
               SizedBox(
-                height: 10.0,
+                height: 15.0,
               ),
               Container(
                 child: Text(
                   menuName,
-                  style: TextStyle(fontSize: 12.0, color: color),
+                  style: TextStyle(fontSize: 16.0, color: color),
                 ),
               )
             ],

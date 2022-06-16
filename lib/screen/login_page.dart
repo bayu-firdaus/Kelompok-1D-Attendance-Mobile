@@ -178,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
     pr.style(
         message: login_checking_progress,
         borderRadius: 10.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffe11586),
         progressWidget: CircularProgressIndicator(),
         elevation: 10.0,
         padding: EdgeInsets.all(10.0),
@@ -186,9 +186,9 @@ class _LoginPageState extends State<LoginPage> {
         progress: 0.0,
         maxProgress: 100.0,
         progressTextStyle: TextStyle(
-            color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
+            color: Colors.white, fontSize: 13.0, fontWeight: FontWeight.w400),
         messageTextStyle: TextStyle(
-            color: Colors.black, fontSize: 19.0, fontWeight: FontWeight.w600));
+            color: Colors.white, fontSize: 19.0, fontWeight: FontWeight.w600));
 
     switch (_loginStatus) {
       case LoginStatus.notSignIn:
@@ -243,6 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                             labelText: login_label_email,
                           ),
                         ),
+
                         TextFormField(
                           validator: (e) {
                             var message;
@@ -263,6 +264,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
+
                         Container(
                           margin: EdgeInsets.only(top: 20.0),
                           width: double.infinity,
@@ -272,12 +274,12 @@ class _LoginPageState extends State<LoginPage> {
                               FocusScope.of(context).requestFocus(FocusNode());
                               check();
                             },
-                            color: Colors.blue,
+                            color: Color(0xffe11586),
                             textColor: Colors.white,
                             child: Text(login_button),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
-                                side: BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: Color(0xffe11586))),
                           ),
                         ),
                         SizedBox(
@@ -297,10 +299,10 @@ class _LoginPageState extends State<LoginPage> {
         break;
       case LoginStatus.doubleCheck:
         return Scaffold(
-          backgroundColor: Colors.blue,
+          backgroundColor: Color(0xffe11586),
           key: _scaffoldKey,
           body: Container(
-            color: Colors.blue,
+            color: Colors.white,
             child: Center(
               child: Container(
                 height: 100.0,

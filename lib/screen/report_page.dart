@@ -36,25 +36,25 @@ class _ReportPageState extends State<ReportPage> {
             DataColumn(
               label: Text(
                 report_date,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             DataColumn(
               label: Text(
                 report_time,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             DataColumn(
               label: Text(
                 report_type,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             DataColumn(
               label: Text(
                 report_location,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -62,16 +62,28 @@ class _ReportPageState extends State<ReportPage> {
               .map(
                 (attendance) => DataRow(cells: [
                   DataCell(
-                    Text(attendance.date),
+                    Text(
+                        attendance.date,
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   DataCell(
-                    Text(attendance.time),
+                    Text(
+                      attendance.time,
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   DataCell(
-                    Text(attendance.type),
+                    Text(
+                        attendance.type,
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   DataCell(
-                    Text(attendance.location),
+                    Text(
+                        attendance.location,
+                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ]),
               )
@@ -87,7 +99,10 @@ class _ReportPageState extends State<ReportPage> {
         future: attendances,
         builder: (context, snapshot) {
           if (null == snapshot.data || snapshot.data.length == 0) {
-            return Center(child: Text(report_no_data));
+            return Center(child: Text(
+                report_no_data,
+                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+            ));
           }
 
           if (snapshot.hasData) {
@@ -103,6 +118,7 @@ class _ReportPageState extends State<ReportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff242559),
       appBar: AppBar(
         title: Text(report_title),
       ),
@@ -112,7 +128,7 @@ class _ReportPageState extends State<ReportPage> {
           mainAxisSize: MainAxisSize.min,
           verticalDirection: VerticalDirection.down,
           children: <Widget>[
-            list(),
+              list(),
           ],
         ),
       ),

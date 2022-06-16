@@ -100,8 +100,8 @@ class _MenuState extends State<Menu> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 200.0,
-                  color: Colors.blue,
+                  height: 220.0,
+                  color: Color(0xff242559),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -114,7 +114,7 @@ class _MenuState extends State<Menu> {
                       Text(
                         main_menu_title,
                         style: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: 20.0,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
@@ -124,9 +124,9 @@ class _MenuState extends State<Menu> {
                 Row(
                   children: [
                     SingleMenu(
-                      icon: FontAwesomeIcons.userClock,
+                      icon: FontAwesomeIcons.check,
                       menuName: main_menu_check_in,
-                      color: Colors.blue,
+                      color: Color(0xffe11586),
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => AttendancePage(
@@ -137,9 +137,9 @@ class _MenuState extends State<Menu> {
                       ),
                     ),
                     SingleMenu(
-                      icon: FontAwesomeIcons.solidClock,
+                      icon: FontAwesomeIcons.times,
                       menuName: main_menu_check_out,
-                      color: Colors.teal,
+                      color: Color(0xffe11586),
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => AttendancePage(
@@ -150,9 +150,9 @@ class _MenuState extends State<Menu> {
                       ),
                     ),
                     SingleMenu(
-                      icon: FontAwesomeIcons.cogs,
+                      icon: FontAwesomeIcons.qrcode,
                       menuName: main_menu_settings,
-                      color: Colors.green,
+                      color: Color(0xffe11586),
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => SettingPage()),
                       ),
@@ -162,25 +162,25 @@ class _MenuState extends State<Menu> {
                 Row(
                   children: [
                     SingleMenu(
-                      icon: FontAwesomeIcons.calendar,
+                      icon: FontAwesomeIcons.calendarAlt,
                       menuName: main_menu_report,
-                      color: Colors.yellow[700],
+                      color: Color(0xffe11586),
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => ReportPage()),
                       ),
                     ),
                     SingleMenu(
-                      icon: FontAwesomeIcons.userAlt,
+                      icon: FontAwesomeIcons.info,
                       menuName: main_menu_about,
-                      color: Colors.purple,
+                      color: Color(0xffe11586),
                       action: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => AboutPage()),
                       ),
                     ),
                     SingleMenu(
                       icon: FontAwesomeIcons.signOutAlt,
-                      menuName: 'Logout',
-                      color: Colors.red[300],
+                      menuName: 'Keluar',
+                      color: Color(0xffe11586),
                       action: () => _signOut(),
                     ),
                   ],

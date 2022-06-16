@@ -215,7 +215,7 @@ class _AttendancePageState extends State<AttendancePage> {
             Alert(
               context: _scaffoldKey.currentContext,
               type: AlertType.success,
-              title: "Success",
+              title: "Sukses",
               desc: "$attendance_show_alert-$dataQuery $attendance_success_ms",
               buttons: [
                 DialogButton(
@@ -235,7 +235,7 @@ class _AttendancePageState extends State<AttendancePage> {
           });
         }
       });
-    } else if (data['message'] == 'cannot attend') {
+    } else if (data['message'] == 'Tidak Bisa Presensi') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();
@@ -244,34 +244,34 @@ class _AttendancePageState extends State<AttendancePage> {
               outside_area, "warning", AlertType.warning, _scaffoldKey, true);
         });
       });
-    } else if (data['message'] == 'location not found') {
+    } else if (data['message'] == 'Lokasi Tidak Ditemukan') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();
 
-          utils.showAlertDialog(location_not_found, "warning",
+          utils.showAlertDialog(location_not_found, "Perhatian",
               AlertType.warning, _scaffoldKey, true);
         });
       });
-    } else if (data['message'] == 'already check-in') {
+    } else if (data['message'] == 'Sudah Melakukan Check-In') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();
 
-          utils.showAlertDialog(already_check_in, "warning", AlertType.warning,
+          utils.showAlertDialog(already_check_in, "Perhatian", AlertType.warning,
               _scaffoldKey, true);
         });
       });
-    } else if (data['message'] == 'check-in first') {
+    } else if (data['message'] == 'Check-In Terlebih Dahulu') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();
 
           utils.showAlertDialog(
-              check_in_first, "warning", AlertType.warning, _scaffoldKey, true);
+              check_in_first, "Perhatian", AlertType.warning, _scaffoldKey, true);
         });
       });
-    } else if (data['message'] == 'Error! Something Went Wrong!') {
+    } else if (data['message'] == 'Ada Kesalahan') {
       Future.delayed(Duration(seconds: 0)).then((value) {
         setState(() {
           pr.hide();
@@ -330,7 +330,7 @@ class _AttendancePageState extends State<AttendancePage> {
     bool isAuthenticated = false;
     try {
       isAuthenticated = await _localAuthentication.authenticateWithBiometrics(
-        localizedReason: "Please authenticate to attending",
+        localizedReason: "Autentikasi Terlebih Dahulu",
         useErrorDialogs: true,
         stickyAuth: true,
       );
@@ -362,11 +362,11 @@ class _AttendancePageState extends State<AttendancePage> {
                   child: CircularProgressIndicator()),
               maxProgress: 100.0,
               progressTextStyle: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 13.0,
                   fontWeight: FontWeight.w400),
               messageTextStyle: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 19.0,
                   fontWeight: FontWeight.w600),
             );
@@ -416,7 +416,7 @@ class _AttendancePageState extends State<AttendancePage> {
     pr.style(
       message: attendance_sending,
       borderRadius: 10.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff242559),
       progressWidget: CircularProgressIndicator(),
       elevation: 10.0,
       padding: EdgeInsets.all(10.0),
@@ -424,9 +424,9 @@ class _AttendancePageState extends State<AttendancePage> {
       progress: 0.0,
       maxProgress: 100.0,
       progressTextStyle: TextStyle(
-          color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w400),
+          color: Colors.white, fontSize: 13.0, fontWeight: FontWeight.w400),
       messageTextStyle: TextStyle(
-          color: Colors.black, fontSize: 19.0, fontWeight: FontWeight.w600),
+          color: Colors.white, fontSize: 19.0, fontWeight: FontWeight.w600),
     );
 
     // Init the query
@@ -436,6 +436,7 @@ class _AttendancePageState extends State<AttendancePage> {
     CheckMockIsNull();
 
     return Scaffold(
+      backgroundColor: Color(0xff242559),
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(widget.title),
@@ -450,13 +451,19 @@ class _AttendancePageState extends State<AttendancePage> {
                 children: [
                   Text(
                     'Silahkan pilih lokasi',
-                    style: TextStyle(color: Colors.grey[600], fontSize: 14.0),
+                    style: TextStyle(color: Colors.grey, fontSize: 20.0),
                     textAlign: TextAlign.center,
                   ),
                   DropdownButton(
+                    dropdownColor: Color(0xff242559),
                     items: dataArea.map((item) {
                       return DropdownMenuItem(
-                        child: Text(item['name']),
+                        child: Text(
+                            item['name'],
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                        ),
                         value: item['id'].toString(),
                       );
                     }).toList(),
@@ -478,11 +485,11 @@ class _AttendancePageState extends State<AttendancePage> {
                 height: 60.0,
                 child: RaisedButton(
                   child: Text(button_scan_attend),
-                  color: Color(0xFFf7c846),
+                  color: Color(0xffe11586),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
-                  textColor: Colors.black,
+                  textColor: Colors.white,
                   onPressed: () async {
                     clickButton = true;
                   },
@@ -490,16 +497,12 @@ class _AttendancePageState extends State<AttendancePage> {
               ),
             ),
             Text(
-              '$attendance_button_info-$getQuery.',
-              style: TextStyle(color: Colors.grey, fontSize: 12.0),
+              '$attendance_button_info-$getQuery $attendance_on_gps.',
+              style: TextStyle(color: Colors.grey, fontSize: 15.0),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              '$attendance_accurate_info $mAccuracy $attendance_on_gps',
-              style: TextStyle(color: Colors.grey[600], fontSize: 14.0),
-              textAlign: TextAlign.center,
+              height: 28.0,
             ),
           ],
         ),

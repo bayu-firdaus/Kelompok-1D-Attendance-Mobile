@@ -1,5 +1,5 @@
-import '../screen/scan_qr_page.dart';
-import '../utils/strings.dart';
+import './screen/scan_qr_page.dart';
+import './utils/strings.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: main_title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor: Colors.blue,
+        primaryColor: Color(0xffe11586),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ScanQrPage(),

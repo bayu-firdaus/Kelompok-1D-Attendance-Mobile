@@ -74,6 +74,7 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff242559),
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text(setting_title),
@@ -96,19 +97,19 @@ class _SettingPageState extends State<SettingPage> {
             ),
             RaisedButton(
               child: Text(button_scan),
-              color: Color(0xFFf7c846),
+              color: Color(0xffe11586),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0),
               ),
-              textColor: Colors.black,
+              textColor: Colors.white,
               onPressed: () => scan(),
             ),
             SizedBox(
-              height: 10.0,
+              height: 20.0,
             ),
             Text(
               setting_info,
-              style: TextStyle(color: Colors.grey, fontSize: 12.0),
+              style: TextStyle(color: Colors.grey, fontSize: 13.0),
               textAlign: TextAlign.center,
             ),
           ],

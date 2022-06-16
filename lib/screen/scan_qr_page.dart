@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import '../database/db_helper.dart';
-import '../model/settings.dart';
-import '../screen/login_page.dart';
-import '../utils/strings.dart';
+import 'package:attendancewithfingerprint/database/db_helper.dart';
+import 'package:attendancewithfingerprint/model/settings.dart';
+import 'package:attendancewithfingerprint/screen/login_page.dart';
+import 'package:attendancewithfingerprint/utils/strings.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -112,7 +112,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
     if (_isAlreadyDoSettings == 'no') {
       return MaterialApp(
         home: Scaffold(
-          backgroundColor: Color(0xff3f6ae0),
+          backgroundColor: Color(0xff242559),
           key: _scaffoldKey,
           body: Container(
             margin: EdgeInsets.all(40.0),
@@ -130,27 +130,27 @@ class _ScanQrPageState extends State<ScanQrPage> {
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 40.0,
                 ),
                 Text(
                   setting_desc,
-                  style: TextStyle(fontSize: 12.0, color: Colors.grey[300]),
+                  style: TextStyle(fontSize: 12.0, color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
                 RaisedButton(
                   child: Text(button_scan),
-                  color: Color(0xFFf7c846),
+                  color: Color(0xffe11586),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                   ),
-                  textColor: Colors.black,
+                  textColor: Colors.white,
                   onPressed: () => scan(),
                 ),
               ],
